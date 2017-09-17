@@ -1,54 +1,44 @@
-# This is a Clojure-friendly emacs config for Chinese
+# 专为中国程序员准备的 Clojure 开发环境🍺
 
-If you're new to emacs, check out
-[this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
+Emacs 新手可参考[this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
 
-## Installing
+## 安装
 
-1. Close Emacs.
-2. Delete `~/.emacs` or `~/.emacs.d` if they exist. (Windows users, your
-   emacs files will probably live in
-   `C:\Users\your_user_name\AppData\Roaming\`. So, for example, you
-   would delete `C:\Users\jason\AppData\Roaming\.emacs.d`.) This is
-   where Emacs looks for configuration files, and deleting these files
-   and directories will ensure that you start with a clean slate.
-3. Download the Emacs
-   [configuration zip file](https://github.com/flyingmachine/emacs-for-clojure/archive/book1.zip)
-   and unzip it. Its contents should be a folder,
-   `emacs-for-clojure-book1`. Run `mv path/to/emacs-for-clojure-book1
-   ~/.emacs.d`.
-4. Create the file `~/.lein/profiles.clj` (Windows users, this is
-   probably `C:\Users\your_user_name\.lein\profiles.clj`) and add this
-   line to it:
+1. 下载最新的 [Emacs](https://www.gnu.org/s/emacs/)
+2. 删除 `~/.emacs` or `~/.emacs.d` 如果它们存在的话. (Windows 路径为`C:\Users\{username}\AppData\Roaming\.emacs.d`）。
+3. 下载[本库](https://github.com/sicper/emacs-for-clojure/archive/master.zip)， 将里面的文件放入步骤2 创建的目录里面。这时的文件目录：
+    ```
+    $ tree ~/.emacs.d
+    /home/vagrant/.emacs.d
+    ├── customizations
+    │   ├── editing.el
+    │   ├── elisp-editing.el
+    │   ├── misc.el
+    │   ├── navigation.el
+    │   ├── setup-clojure.el
+    │   ├── setup-js.el
+    │   ├── shell-integration.el
+    │   └── ui.el
+    ├── init.el
+    ├── profiles.clj
+    ├── README.md
+    └── themes
+    ├── color-theme-tomorrow.el
+    ├── tomorrow-night-blue-theme.el
+    ├── tomorrow-night-bright-theme.el
+    ├── tomorrow-night-eighties-theme.el
+    ├── tomorrow-night-theme.el
+    ├── tomorrow-theme.el
+    └── zenburn-theme.el
+    
+    2 directories, 17 files
+    ```
+4. 下载Clojure构建工具 [lein](https://leiningen.org/)，并把它添加到 PATH 里面。
+5. 把本项目的 `profiles.clj` 移动到 `~/.lein`下（Windows 路径：`C:\Users\{username}\.lein`），如果该文件不存在需要先提前创建。
+6. 开启 Emacs，这时会去下载第三方库，等安装完后，Clojure 开发环境就好了！Enjoy！
 
-```clojure
-{:user {:plugins [[cider/cider-nrepl "0.15.1"]]}} 
-```
+## 说明
 
-Then open Emacs.
-
-That should install the latest version. Enjoy!
-
-## Organization
-
-I've tried to separate everything logically and document the purpose
-of every line. [`init.el`](./init.el) acts as a kind of table of
-contents.  It's a good idea to eventually go through `init.el` and the
-files under the `customizations` directory so that you know exactly
-what's going on.
-
-## Supporting CSS, HTML, JS, etc.
-
-Emacs has decent support for CSS, HTML, JS, and many other file types out of the box, but if you want better support, then have a look at [my personal emacs config's init.el](https://github.com/flyingmachine/emacs.d/blob/master/init.el). It's meant to read as a table of contents. The emacs.d as a whole adds the following:
-
-* [Customizes js-mode and html editing](https://github.com/flyingmachine/emacs.d/blob/master/customizations/setup-js.el)
-    * Sets indentation level to 2 spaces for JS
-    * enables subword-mode so that M-f and M-b break on capitalization changes
-    * Uses `tagedit` to give you paredit-like functionality when editing html
-    * adds support for coffee mode
-* [Uses enh-ruby-mode for ruby editing](https://github.com/flyingmachine/emacs.d/blob/master/customizations/setup-ruby.el). enh-ruby-mode is a little nicer than the built-in ruby-mode, in my opinion.
-    * Associates many filenames and extensions with enh-ruby-mode (.rb, .rake, Rakefile, etc)
-    * Adds keybindings for running specs
-* Adds support for YAML and SCSS using the yaml-mode and scss-mode packages
-
-In general, if you want to add support for a language then you should be able to find good instructions for it through Google. Most of the time, you'll just need to install the "x-lang-mode" package for it.
+1. 如果任何安装问题，请提 issue，本库的目的就是为初学者提供一个可在三大主流操作系统上完美运行的 Clojure 开发环境！
+2. 本库 Fork 自 [flyingmachine](https://github.com/flyingmachine/emacs-for-clojure)，由衷感谢！
+3. Clojure 学习交流 QQ 群：119845407。
