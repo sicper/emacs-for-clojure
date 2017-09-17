@@ -1,20 +1,7 @@
-# this is a Clojure-friendly emacs config
+# This is a Clojure-friendly emacs config for Chinese
 
 If you're new to emacs, check out
 [this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
-
-## WARNING
-
-This project uses an outdated version of
-[CIDER](https://github.com/clojure-emacs/cider), the package that
-provides much of the functionality for Clojure development. If you run
-into issues, try upgrading (instructions below).
-
-Why not just update this package to use the latest CIDER, you ask?
-This project uses CIDER 0.8.1 so that
-[Clojure for the Brave and True](http://www.braveclojure.com/basic-emacs/)
-readers are less likely to get confused as they use Emacs for the
-first time.
 
 ## Installing
 
@@ -35,35 +22,10 @@ first time.
    line to it:
 
 ```clojure
-{:user {:plugins [[cider/cider-nrepl "0.8.1"]]}} 
+{:user {:plugins [[cider/cider-nrepl "0.15.1"]]}} 
 ```
 
 Then open Emacs.
-
-## Upgrading
-
-Before upgrading, ensure that your `.emacs.d` directory is under
-version control so that you can always revert to a known good state.
-
-To upgrade:
-
-1. Edit `.emacs.d/init.el`, adding these lines after line 12:
-
-   ```elisp
-   (add-to-list 'package-archives
-                '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-   
-   (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
-   ```
-
-2. Close Emacs.
-3. Run `rm -Rf .emacs.d/elpa/cider-*`
-4. Open Emacs. You'll probably see some errors and your theme won't
-   load. That's ok.
-5. In Emacs, run `M-x package-refresh contents`.
-6. In Emacs, run `M-x package-install cider`.
-7. Close and re-open Emacs.
-8. Open `.lein/profiles.clj` and remove `[cider/cider-nrepl "0.8.1"]` from it.
 
 That should install the latest version. Enjoy!
 
