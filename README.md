@@ -1,6 +1,8 @@
-# 专为中国程序员准备的 Clojure 开发环境🍺
+# 专为 Clojure 初学者准备的 Emacs 开发环境
 
-Emacs 新手可参考[this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
+> Mac/Linux/Windows 均支持🍺
+
+Emacs 新手可参考 [this introductory tutorial](http://www.braveclojure.com/basic-emacs/) !
 
 ## 安装
 
@@ -31,7 +33,7 @@ Emacs 新手可参考[this introductory tutorial](http://www.braveclojure.com/ba
         ├── tomorrow-theme.el
         └── zenburn-theme.el
 
-    2 directories, 17 files
+    2 directories, 18 files
     ```
 4. 下载Clojure构建工具 [lein](https://leiningen.org/)，并把它添加到 PATH 里面
 5. 把本项目的 `profiles.clj` 移动到 `~/.lein`下（Windows 路径：`C:\Users\{username}\.lein`），如果该文件不存在需要先提前创建

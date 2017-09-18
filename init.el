@@ -64,6 +64,9 @@
     ;; edit html tags like sexps
     tagedit
 
+    ;; complete anything
+    ;; http://company-mode.github.io/
+    company-mode
     ;; git integration
     magit))
 
