@@ -66,7 +66,7 @@
 
     ;; complete anything
     ;; http://company-mode.github.io/
-    company-mode
+    company
     ;; git integration
     magit))
 
